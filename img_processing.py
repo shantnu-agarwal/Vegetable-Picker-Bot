@@ -18,8 +18,8 @@ while 1:
 	kernal=np.ones((5,5)) ##
 	red=cv2.erode(red,kernal)
 	red=cv2.dilate(red,kernal)
-	#res=cv2.bitwise_and(img,img,mask=red)
-	#bmask = cv2.GaussianBlur(res, (5,5),0)
+	res=cv2.bitwise_and(img,img,mask=red)
+	bmask = cv2.GaussianBlur(res, (5,5),0)
 	median=cv2.medianBlur(red,15)
 	#cv2.imshow('median',median)
 	opening=cv2.morphologyEx(median ,cv2.MORPH_OPEN,kernal)
